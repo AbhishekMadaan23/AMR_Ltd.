@@ -54,7 +54,7 @@ const CountryWeDealWith = () => {
           <div className="relative w-full h-full overflow-hidden">
             <div
               className="flex w-full h-full transition-transform duration-1000 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 40}%)` }}
+              style={{ transform: `translateX(-${currentIndex * 25}%)` }}
             >
               {slideImages.map((image, index) => {
                 return (

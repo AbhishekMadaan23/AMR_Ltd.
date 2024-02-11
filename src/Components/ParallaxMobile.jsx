@@ -27,14 +27,14 @@ const BackgroundImage = styled.img`
 `;
 
 // React component for the parallax effect
-const Parallax = () => {
+const ParallaxMobile = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const parallaxLayers = document.querySelectorAll(".parallax-layer");
 
       parallaxLayers.forEach((layer, index) => {
-        const speed = 0.8 * (index + 1);
+        const speed = 0.1 * (index + 1);
         const yPos = -(scrollY * speed);
         layer.style.transform = `translateY(${yPos}px)`;
       });
@@ -48,22 +48,20 @@ const Parallax = () => {
   }, []);
 
   return (
-    <ParallaxContainer className=" hidden lg:block relative h-[20vh] md:h-[30vh]">
+    <ParallaxContainer className=" md:hidden relative h-[60vh] md:h-[40vh]">
       {/* Foreground Content */}
-      <div className=" absolute z-30 ml-28 w-[40vw] text-white py-24">
-        <h1 className="text-2xl md:text-4xl font-bold ">
+      <div className=" absolute z-30 ml-5  md:ml-28 md:w-[40vw] text-white py-20 md:py-24">
+        <h1 className="text-lg md:text-4xl font-bold ">
           BUYER OF FERROUS & NON-FERROUS METALS IN LONDON UK
         </h1>
       </div>
       <div
-        className=" text-center absolute bg-green-800  z-30 right-10 w-[15vw] text-white mt-24
-      mr-52 hover:bg-white hover:text-green-800 border border-transparent hover:border-2 transition duration-300 ease-in-out"
+        className=" bottom-60 left-28 text-center absolute bg-green-800  z-30 md:right-10 md:w-[15vw] text-white md:mt-24
+      md:mr-52 hover:bg-white hover:text-green-800 border border-transparent hover:border-2 transition duration-300 ease-in-out"
       >
-        <button className="text-2xl py-5 px-5 font-bold ">Find Out More</button>
-      </div>
-      <div className="z-10 text-white text-center py-24">
-        <h1 className="text-4xl font-bold">Welcome to Parallax Effect</h1>
-        <p className="mt-4 text-lg">Scroll down to see the effect</p>
+        <button className=" text-lg py-2 px-2 md:text-2xl md:py-5 md:px-5 font-bold ">
+          Find Out More
+        </button>
       </div>
 
       {/* Parallax Layers */}
@@ -78,4 +76,4 @@ const Parallax = () => {
   );
 };
 
-export default Parallax;
+export default ParallaxMobile;
